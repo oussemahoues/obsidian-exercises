@@ -45,7 +45,7 @@ export default class SelectExercise extends Exercise {
     }
 
     static parse(data:string):({ correct:boolean,value:string }[]){
-        return listed(seqMap(OPTW_EOF,opt(string('*')),SWORD,(_,valid,value)=>({ correct:(valid!==null),value }))).tryParse(data);
+        return listed(seqMap(OPTW_EOF,opt(string('*')),SWORD,(_: any,valid: any,value: string)=>({ correct:(valid!==null),value }))).tryParse(data);
     }
 
 }

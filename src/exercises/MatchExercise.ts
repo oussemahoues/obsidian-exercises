@@ -90,7 +90,7 @@ export default class MatchExercise extends Exercise {
     }
 
     static parse(data:string):[string,string][]{
-        return listed(seqMap(sided(SWORD),keyed(string('=>')),sided(SWORD),(v1,_,v2):[string,string]=>([v1,v2]))).tryParse(data);
+        return listed(seqMap(sided(SWORD),keyed(string('=>')),sided(SWORD),(v1: string,_: any,v2: string):[string,string]=>([v1,v2]))).tryParse(data);
     }
 
     private createElm(content:string,right=false):MatchElm{
