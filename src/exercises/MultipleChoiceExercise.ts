@@ -49,6 +49,16 @@ export default class MultipleChoiceExercise extends Exercise {
         return isWrong ? 0 : 1;
     }
 
+    getAnswer(){
+        const selected = [];
+        for(const el of this.optList){
+            if(el.classList.contains('selected')){
+                selected.push(el.textContent || '');
+            }
+        }
+        return selected.join(', ');
+    }
+
     reveal(){
         for(const el of this.optList){
             this.clear(el);

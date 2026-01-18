@@ -77,6 +77,16 @@ export default class MatchExercise extends Exercise {
         return correct;
     }
 
+    getAnswer(){
+        const matches = [];
+        for(const matchElm of this.leftElms){
+            if(matchElm.link){
+                matches.push(`${matchElm.value}=>${matchElm.link.value}`);
+            }
+        }
+        return matches.join(', ');
+    }
+
     reveal(){
         for(const matchElm of this.leftElms){
             this.clear(matchElm.elm);

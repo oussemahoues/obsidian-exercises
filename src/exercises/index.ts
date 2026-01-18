@@ -92,7 +92,9 @@ export default (app:App, data:string, elm:HTMLElement, ctx:MarkdownPostProcessor
             const isCorrect = score === total;
             const icon = isCorrect ? "✅" : "❌";
             const status = isCorrect ? "Correct" : "Incorrect";
-            qLines += `${icon} Q${qIndex}: ${status}\n`;
+            const userAnswer = opt.getAnswer();
+            const answerText = userAnswer ? ` (Answer: ${userAnswer})` : '';
+            qLines += `${icon} Q${qIndex}: ${status}${answerText}\n`;
             qIndex++;
         }
 

@@ -23,6 +23,10 @@ export default class InputExercise extends Exercise {
         else return this.wrong();
     }
 
+    getAnswer(){
+        return this.elm.value;
+    }
+
     reveal(){
         this.clear();
         if(this.correctOpts[0]) this.elm.value = this.correctOpts[0];

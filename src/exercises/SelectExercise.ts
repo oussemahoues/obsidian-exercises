@@ -39,6 +39,11 @@ export default class SelectExercise extends Exercise {
         else return this.wrong();
     }
 
+    getAnswer(){
+        const opt = this.elm.options[this.elm.options.selectedIndex];
+        return opt.textContent || '';
+    }
+
     reveal(){
         this.clear();
         if(this.correctOpts[0]) this.elm.value = this.correctOpts[0].value;

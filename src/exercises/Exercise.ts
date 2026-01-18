@@ -17,6 +17,7 @@ export abstract class Exercise {
     }
 
     validate():number { return 0; }
+    getAnswer():string { return ''; }
     reveal(){ this.clear(); }
 
     correct(specificElm:HTMLElement|null=null):number {
